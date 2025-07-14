@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} 3c}
+\PYG{k+kn}{from} \PYG{n+nn}{sklearn.linear\PYGZus{}model} \PYG{k+kn}{import} \PYG{n}{LinearRegression}
+\PYG{k+kn}{from} \PYG{n+nn}{sklearn.model\PYGZus{}selection} \PYG{k+kn}{import} \PYG{n}{train\PYGZus{}test\PYGZus{}split}
+\PYG{k+kn}{from} \PYG{n+nn}{sklearn.metrics} \PYG{k+kn}{import} \PYG{n}{mean\PYGZus{}squared\PYGZus{}error}
+
+\PYG{n}{lr} \PYG{o}{=} \PYG{n}{LinearRegression}\PYG{p}{()}
+\PYG{n}{monona\PYGZus{}df\PYGZus{}train}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ones\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{monona\PYGZus{}df\PYGZus{}test}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ones\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{lr}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(}\PYG{n}{monona\PYGZus{}df\PYGZus{}train}\PYG{p}{[[}\PYG{l+s+s1}{\PYGZsq{}ones\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Winter\PYGZsq{}}\PYG{p}{,}\PYG{n}{col}\PYG{p}{]],} \PYG{n}{mendota\PYGZus{}df\PYGZus{}train}\PYG{p}{[[}\PYG{n}{col}\PYG{p}{]])}
+\PYG{n}{mendota\PYGZus{}pred} \PYG{o}{=} \PYG{n}{lr}\PYG{o}{.}\PYG{n}{predict}\PYG{p}{(}\PYG{n}{monona\PYGZus{}df\PYGZus{}test}\PYG{p}{[[}\PYG{l+s+s1}{\PYGZsq{}ones\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Winter\PYGZsq{}}\PYG{p}{,} \PYG{n}{col}\PYG{p}{]])}
+
+\PYG{n}{weights} \PYG{o}{=} \PYG{n}{lr}\PYG{o}{.}\PYG{n}{coef\PYGZus{}}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{weights}\PYG{p}{)}
+\PYG{n}{intercept} \PYG{o}{=} \PYG{n}{lr}\PYG{o}{.}\PYG{n}{intercept\PYGZus{}}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{intercept}\PYG{p}{)}
+\end{Verbatim}

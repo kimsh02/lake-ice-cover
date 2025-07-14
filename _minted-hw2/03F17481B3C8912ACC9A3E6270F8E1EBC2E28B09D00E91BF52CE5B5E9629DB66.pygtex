@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} 3b}
+\PYG{n}{split} \PYG{o}{=} \PYG{n}{mendota\PYGZus{}df}\PYG{o}{.}\PYG{n}{index}\PYG{p}{[}\PYG{n}{mendota\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Winter\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}1970\PYGZhy{}71\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{()[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}
+\PYG{n}{mendota\PYGZus{}df\PYGZus{}train} \PYG{o}{=} \PYG{n}{mendota\PYGZus{}df}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[:}\PYG{n}{split}\PYG{p}{]}
+\PYG{n}{mendota\PYGZus{}df\PYGZus{}test} \PYG{o}{=} \PYG{n}{mendota\PYGZus{}df}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{n}{split}\PYG{p}{:]}
+\PYG{n}{split} \PYG{o}{=} \PYG{n}{monona\PYGZus{}df}\PYG{o}{.}\PYG{n}{index}\PYG{p}{[}\PYG{n}{monona\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Winter\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}1970\PYGZhy{}71\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{()[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}
+\PYG{n}{monona\PYGZus{}df\PYGZus{}train} \PYG{o}{=} \PYG{n}{monona\PYGZus{}df}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[:}\PYG{n}{split}\PYG{p}{]}
+\PYG{n}{monona\PYGZus{}df\PYGZus{}test} \PYG{o}{=} \PYG{n}{monona\PYGZus{}df}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{n}{split}\PYG{p}{:]}
+
+\PYG{n}{mendota\PYGZus{}a} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{mendota\PYGZus{}df\PYGZus{}train}\PYG{p}{[}\PYG{n}{col}\PYG{p}{])}
+\PYG{n}{monona\PYGZus{}a} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{monona\PYGZus{}df\PYGZus{}train}\PYG{p}{[}\PYG{n}{col}\PYG{p}{])}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Mendota Mean:\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{mendota\PYGZus{}a}\PYG{p}{))}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Mendota STD:\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{mendota\PYGZus{}a}\PYG{p}{,}\PYG{n}{ddof}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{))}
+\PYG{n+nb}{print}\PYG{p}{()}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Monona Mean:\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{monona\PYGZus{}a}\PYG{p}{))}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Monona STD:\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{monona\PYGZus{}a}\PYG{p}{,}\PYG{n}{ddof}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{))}
+\end{Verbatim}

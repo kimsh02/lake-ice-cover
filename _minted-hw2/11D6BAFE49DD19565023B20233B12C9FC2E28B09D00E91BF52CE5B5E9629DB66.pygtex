@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} 3e}
+
+\PYG{n}{lr2} \PYG{o}{=} \PYG{n}{LinearRegression}\PYG{p}{()}
+\PYG{n}{lr2}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(}\PYG{n}{monona\PYGZus{}df\PYGZus{}train}\PYG{p}{[[}\PYG{l+s+s1}{\PYGZsq{}ones\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Winter\PYGZsq{}}\PYG{p}{]],}\PYG{n}{mendota\PYGZus{}df\PYGZus{}train}\PYG{p}{[[}\PYG{n}{col}\PYG{p}{]])}
+\PYG{n}{mendota\PYGZus{}pred2} \PYG{o}{=} \PYG{n}{lr2}\PYG{o}{.}\PYG{n}{predict}\PYG{p}{(}\PYG{n}{monona\PYGZus{}df\PYGZus{}test}\PYG{p}{[[}\PYG{l+s+s1}{\PYGZsq{}ones\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Winter\PYGZsq{}}\PYG{p}{]])}
+\PYG{n}{mse2} \PYG{o}{=} \PYG{n}{mean\PYGZus{}squared\PYGZus{}error}\PYG{p}{(}\PYG{n}{mendota\PYGZus{}df\PYGZus{}test}\PYG{p}{[[}\PYG{n}{col}\PYG{p}{]],} \PYG{n}{mendota\PYGZus{}pred2}\PYG{p}{)}
+
+\PYG{n}{weights2} \PYG{o}{=} \PYG{n}{lr2}\PYG{o}{.}\PYG{n}{coef\PYGZus{}}
+\PYG{n}{intercept2} \PYG{o}{=} \PYG{n}{lr2}\PYG{o}{.}\PYG{n}{intercept\PYGZus{}}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Feature weights: \PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{weights2}\PYG{p}{))}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Intercept:\PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{intercept2}\PYG{p}{))}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Mean sqaure error: \PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{mse2}\PYG{p}{))}
+\end{Verbatim}

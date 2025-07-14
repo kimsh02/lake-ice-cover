@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} 3d}
+\PYG{n}{mse} \PYG{o}{=} \PYG{n}{mean\PYGZus{}squared\PYGZus{}error}\PYG{p}{(}\PYG{n}{mendota\PYGZus{}df\PYGZus{}test}\PYG{p}{[[}\PYG{n}{col}\PYG{p}{]],} \PYG{n}{mendota\PYGZus{}pred}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{mse}\PYG{p}{)}
+\end{Verbatim}

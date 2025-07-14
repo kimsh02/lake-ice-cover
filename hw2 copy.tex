@@ -1,0 +1,148 @@
+\documentclass[12pt]{report}
+
+\usepackage{fullpage}
+\usepackage{amsmath,amssymb,bm,upgreek,mathrsfs}
+\usepackage{algorithmic,algorithm}
+\usepackage{graphicx,subcaption}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{alltt}
+\usepackage{cancel}
+\usepackage{listings}
+
+\doublespacing
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\N}{\mathcal{N}} \newcommand{\U}{\mathcal{U}}
+\newcommand{\Poi}{{\text Poisson}} \newcommand{\Exp}{{\text Exp}}
+\newcommand{\G}{\mathcal{G}} \newcommand{\Ber}{{\text Bern}}
+\newcommand{\Lap}{{\text Laplace}} \newcommand{\btheta}{\boldsymbol{\theta}}
+\newcommand{\bSigma}{\boldsymbol{\Sigma}}
+
+\newcommand{\E}[1]{\mathbb{E}[#1]}
+\newcommand{\Cov}[2]{\mathbb{C}\mathrm{ov}(#1,#2)}
+
+\def\*#1{\mathbf{#1}} \newcommand*{\V}[1]{\mathbf{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\centerline{\it CS 480 HW \#2}
+
+\begin{enumerate}
+
+\item[1.] Effort level.
+
+\item[a.] The homework took me 12 hours.
+\item[b.] N\textbackslash A
+\item[c.] N\textbackslash A
+
+\item[2.] Paired t-test.
+
+\item[a.] 95\% confidence interval.
+\item[b.] Two-sided paired t-test for null-hypothesis.
+\item[c.] Report p-value for testing done in b.
+\item[d.] Describe pseudocode for bootstrapping method for this problem.
+\item[e.] Implement and perform bootstrapping paired test with computed p-value.
+
+\item[3.] Linear regression.
+
+\item[a.] Plot year versus ice days.
+\item[b.] Split the datasets into training and testing. Compute std and mean for
+  the two lakes respetively.
+\item[c.] Using training sets, train a linear regression model.
+\item[d.] Mean squared error on the test set.
+\item[e.] Train a linear regression model using Monona.
+  \begin{itemize}
+  \item[i.] Interpret the sign of $\gamma_1$.
+  \item[ii.] Assessing a viewpoint formed from the model.
+  \end{itemize}
+
+\item[4.] Maximum likelihood estimation for linear regression.
+
+\item[a.] Likelihood of the ith datapoint.
+
+  $Laplace(\mu ,b) \rightarrow f(z|\mu , b) = \frac{1}{2b}e^{-\frac{|z-u|}{b}}$
+
+  $Laplace(w^Tx,1) \rightarrow f(z|w^Tx, 1) = \frac{1}{2}e^{-|z-u|}$
+
+  $P(y_i|x_iw)=f(y_i|w^Tx_i,1)$
+
+  $= \frac{1}{2}e^{-|y_i-w^Tx_i|}$
+\item[b.] Log-likelihood of the dataset.
+\item[c.] Maximum likelihood estimator $w$ under the above model.
+
+% \item[B.] Making a world coordinate system.
+%   Below in Figure 4, I provide the world coordinate system for the image provided
+%   for hw03.
+
+%   \begin{figure}[H]
+%     \centering \fbox{
+%       \begin{minipage}{.98\linewidth}
+%         \includegraphics[width=\linewidth]{IMG_0862.jpeg}
+%         \caption{World coordinate system for provided image for hw03. The X, Y,
+%           and Z axes are clearly labeled, and the direction of the axes' arrows
+%           indicate in which direction they grow. 15 blue points have been
+%           selected for this experiement as shown, and their (X,Y,Z) coordinates
+%           are labeled in yellow.}
+%         \label{fig:b1}
+%       \end{minipage}}
+%   \end{figure}
+
+%   These 15 blue world coordinate points in Figure 4 will be used for Part C to
+%   compare how two cameras map these 3D world coordinates to 2D. The files
+%   world\_coords.txt and image\_coords.txt have also been provided in this
+%   submission for Part C. The world coordinates of the points are as they are in
+%   Figure 4, and the image coordinates (X, Y) were obtained using the
+%   `datacursormode on' feature in MATLAB and manually clicking on the labeled
+%   blue points.
+
+% \item[C.] Analyzing how a camera matrix maps points from 3D to 2D.
+
+%   Below in Figure 5, I provide the visual representation of our clicked world
+%   coordinates along with the two camera estimates of our world coordinates.
+
+%   \begin{figure}[H]
+%     \centering \fbox{
+%       \begin{minipage}{.98\linewidth}
+%         \includegraphics[width=\linewidth]{Screenshot 2024-09-29 at 11.19.16 PM.png}
+%         \caption{The red clicked points are our world coordinates from Figure 4
+%           moved onto this black canvas to compare to our first (green) and
+%           second (blue) camera estimates. Produced in MATLAB.}
+%         \label{fig:c1}
+%       \end{minipage}}
+%   \end{figure}
+
+%   In Figure 5 above, we can see that both the first and camera estimates are
+%   visually close to our red clicked points. One thing to note when plotting the
+%   estimates was to flip the X and Y coordinates generated from the given camera
+%   matrices which we explored the reason for in Part A.
+
+%   The RMSE of the distance between the camera estaimte point and the actual
+%   clicked point was calculated for both cameras in MATLAB. Again, when
+%   calculating the distsances between points, we have to flip the coordinates
+%   generated from the camera matrices, or flip the image coordinates of the world
+%   coordinates. The key thing is to be consistent with our coordinate system
+%   (either work in X vs Y values or work with indices of a matrix). The RMSEs are
+%   as follows:
+
+%   $RMSE_{camera1}=23.9$
+
+%   $RMSE_{camera2}=40.7$
+
+%   The RMSE of the camera estimated points and actual world coordinate points is
+%   also known as the re-projection error as stated in the homework. From the
+%   reported RMSEs of the cameras, the first camera is better quantitatively
+%   speaking, and from scrutinizing Figure 5, one can see that the first camera
+%   (green) points are closer to the clicked (red) points than the second (blue)
+%   camera points on average.
+
+%   Thus, the first camera's matrix is more accurate.
+
+\end{enumerate}
+
+\end{document}
