@@ -18,4 +18,4 @@ It includes:
   inference
 
 All analyses leverage Pandas, SciPy, Matplotlib, and scikit-learn, with clear
-Jupyter notebooks and reproducible code.
+Jupyter notebooks and reproducible code. See pdf report [here](hw2.pdf);
