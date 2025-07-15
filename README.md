@@ -17,5 +17,4 @@ It includes:
 * Maximum likelihood estimation under a Laplace noise model for parameter
   inference
 
-All analyses leverage Pandas, SciPy, Matplotlib, and scikit-learn, with clear
-Jupyter notebooks and reproducible code. See pdf report [here](hw2.pdf).
+See pdf report [here](hw2.pdf).
